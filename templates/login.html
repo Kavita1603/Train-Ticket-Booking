@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>traiticketbook.com</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <!--<link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+
+<body>
+   
+   <header>
+		<div class="main">
+		<div class="logo">
+		<!--	<img src=logo.png" alt=""> -->
+		</div>
+		<ul>
+			<li><a href='/'>Home</a></li>
+      <li><a href='/account/register'>Register</a></li>
+			<li  class="active"><a href='account/login'>Login</a></li>
+			
+			<li><a href='/account/pnr'>PNR Enquiry</a></li>
+			<li><a href='/account/about'>About</a></li>
+			<li><a href='/account/contact'>Contact</a></li>
+    </ul>
+  
+		</div>
+    <br><br><br><br><br><br><br>
+
+    <h1>Login</h1><br>
+    <form action='login' method='post'>
+    {% csrf_token %}
+
+    <div>
+   {% for message in messages %}
+    <h3> {{message}} </h3>
+    {% endfor %}
+    </div><br><br>
+		
+     <label for='username'>Username:</label></td><br><br>
+    <input type="text" name="username"> <br><br>
+
+    <label for='password'>Password:</label></td><br><br>
+    <input type="password" name="password"> <br><br>
+    <input type="submit"> <br><br>
+    </form>
+
+       <strong> <a href="/forgotusername">Forgot Username?</a></strong><br><br>
+    
+       <strong><a href="/forgotpassword">Forgot Password?</a></strong><br><br>
+
+        <strong>Don't have an account?</strong> <a href= "register"> Create Here </a>
+
+ </header> 
+
+  
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>traiticketbook.com</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css'%}" type="text/css">   
+</head>
+<body>
+	<header>
+		<div class="main">
+		<div class="logo">
+		<!--	<img src=logo.png" alt=""> -->
+		</div>
+		<ul>
+			
+			{% if user.is_authenticated %}
+			<li>Hello, {{user.first_name}}.</li>
+			
+			<li><a href='account/edit_profile/'>Edit Profile</a></li>
+			Enjoy Your Holidays.......
+			<li><a href='account/logout'>Logout</a></li>
+			
+			{% else %}
+			<li class='active'><a href='/'>Home</a></li>
+			<li><a href='/account/register'>Register</a></li>
+			<li><a href='/account/login'>Login</a></li>
+			
+			<li><a href='/account/pnr'>PNR Enquiry</a></li>
+			<li><a href='/account/about'>About</a></li>
+			<li><a href='/account/contact'>Contact</a></li>
+			{% endif %}
+		</ul>
+		</div>
+
+		<div class="title">
+			<h1>Book Tickets</h1>
+		</div>
+		<div class="botton">
+			<a href="account/register" class="btn">Book a Ticket</a>
+			
+		</div>
+	</header>
+</body>
+</html>
+{% endblock %}

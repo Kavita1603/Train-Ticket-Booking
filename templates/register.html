@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>traiticketbook.com</title>
+ 
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+  <!--<link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+
+<body>
+    
+    <header>
+		<div class="main">
+		<div class="logo">
+		<!--	<img src=logo.png" alt=""> -->
+		</div>
+		<ul>
+			<li><a href='/'>Home</a></li>
+      <li class="active" ><a href='account/register'>Register</a></li>
+			<li><a href='/account/login'>Login</a></li>
+			
+			<li><a href='/account/pnr'>PNR Enquiry</a></li>
+			<li><a href='/account/about'>About</a></li>
+			<li><a href='/account/contact'>Contact</a></li>
+    </ul>
+		</div> <br><br><br>
+
+    <div id="bkg">
+    <div id ="box" class="container">
+    <div>
+    
+       <h1> Registration</h1><br>
+
+       <h3> Please use a valid E-Mail ID and mobile number in registration. </h3><br>
+  <form action='register' method='post'>
+      {% csrf_token %}
+   
+   <div>
+   {% for message in messages %}
+    <h3> {{message}} </h3>
+    {% endfor %}
+    </div><br><br>
+  
+
+    <label for='name'>First Name: </label></td><br>
+    <input type="text" name="first_name" > <br><br>
+
+    <label for='name'>First Name: </label></td><br>
+    <input type="text" name="last_name"> <br><br>
+
+    <label for='name'>Username: </label></td><br>
+    <input type="text" name="username" > <br><br>
+
+    <label for='name'>Email </label></td><br>
+    <input type="email" name="email"> <br><br>
+
+    <label for='name'>Password: </label></td><br>
+    <input type="password" name="password1" > <br><br>
+
+    <label for='name'>Confirm Password: </label></td><br>
+    <input type="password" name="password2"> <br><br>
+    <input type='Submit' value='Submit'><br><br> 
+    <strong>Alrady have an account?</strong> <a href= "login"> Login </a><b>
+    
+  <!-- ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="js/script.js"></script> -->
+</header>
+</div>
+</div>
+</div>
+</body>
+
+</html>
